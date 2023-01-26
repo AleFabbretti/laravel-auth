@@ -19,7 +19,9 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>{{ $project->company }}</td>
-                    <td>{{ $project->action }}</td>
+                    <td><a href="{{ route('admin.project.show', $project->slug) }}" class="btn btn-success"><i
+                                class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
             @endforeach
 

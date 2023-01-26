@@ -25,7 +25,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
-    Route::resource('project', ProjectController::class);
+    Route::resource('project', ProjectController::class)->parameters(['project' => 'project:slug']);
 });
 
 require __DIR__.'/auth.php';
