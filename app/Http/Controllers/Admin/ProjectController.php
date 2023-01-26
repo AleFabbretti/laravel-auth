@@ -99,6 +99,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $old_title = $project->title;
+        $project->delete();
+
+        return redirect()->route('admin.project.index')->with('message', "Il progetto $old_title è stato cancellato");
     }
 }

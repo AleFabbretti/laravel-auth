@@ -27,11 +27,16 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>{{ $project->company }}</td>
-                    <td><a href="{{ route('admin.project.show', $project->slug) }}" class="btn btn-success"><i
+                    <td>
+                        <a href="{{ route('admin.project.show', $project->slug) }}" class="btn btn-success"><i
                                 class="fa-solid fa-eye"></i></a>
-                    </td>
-                    <td><a href="{{ route('admin.project.edit', $project->slug) }}" class="btn btn-warning"><i
+                        <a href="{{ route('admin.project.edit', $project->slug) }}" class="btn btn-warning"><i
                                 class="fa-solid fa-pencil"></i></a>
+                        <form action="{{ route('admin.project.destroy', $project) }}" method="POST" class="d-inline-block">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
