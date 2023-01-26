@@ -2,6 +2,11 @@
 
 @section('content')
     <h1>Lista Progetti</h1>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="my-4">
         <a href="{{ route('admin.project.create') }}" class="btn btn-primary">Crea progetto</a>
     </div>

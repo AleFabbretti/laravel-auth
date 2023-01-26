@@ -19,7 +19,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo progetto</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="inserisci il titolo">
+                    <input type="text" class="form-control" id="title" name="title">
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
